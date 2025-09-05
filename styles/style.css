@@ -1,5 +1,446 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  color: var(--main-text-color, #F1B2CE);
+  font-family: var(--main-font, monospace);
+  font-weight: var(----normal-font-weight, 400);
+  font-size: var(--main-text-size, 18px);
+  background-color: #000A31;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--bg-image-url);
+  background-repeat: no-repeat; 
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
+
+.header {
+  /* justify-items: center; */
+  /* justify-content: center; */
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  /* grid-template-columns: calc(100vw - var(--margin, 10px) * 2); */
+  align-items: center;
+  padding: var(--padding, 10px);
+  block-size: 100vh;
+  min-block-size: 668px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 50px;
+  padding: 0 var(--padding, 10px);
+}
+
+.header__decoration {
+  position: absolute;
+  top: 10px;
+  right: 19px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent-color, #FF0070);
+  font-weight: var(--normal-font-weight, 400);
+  font-size: var(--main-text-size, 18px);
+  line-height: calc(25 / 18);
+}
+.header__decoration::after {
+  content: "";
+  display: inline-block;
+  margin-inline-start: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--accent-color, #FF0070);
+  background-color: var(--accent-color, #FF0070);
+  block-size: 9px;
+  inline-size: 9px;
+ 
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  border: 1px solid var(--decoration-color, #FF0070);
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.decorated-zone::before {
+  top: 10px;
+  right: 10px;
+  border-inline-start: none;
+  border-block-end: none;
+}
+
+.decorated-zone::after {
+  bottom: 10px;
+  left: 10px;
+  border-inline-end: none;
+  border-block-start: none;
+}
+
+.header__title {
+  display: inline-block;
+  grid-row: 2;
+  align-self: center;
+  /* justify-self: start; */
+  text-align: left;
+  
+  
+}
+
+.accent-text {
+  color: var(--h1-color, #DB00FF);
+  font-weight: var(--bold-font-weight, 700);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: var(--h1-line-height, 0.83);
+  text-shadow: 4px 4px 0 var(--accent-color, #FF0070);
+}
+
+.header__description {
+  grid-row: 3;
+  align-self: center;
+}
+
+.h2 {
+  font-weight: var(--bold-font-weight, 700);
+  line-height: var(--h2-line-height, 0.825);
+  text-shadow: 2px 2px 0 var(--accent-color, #FF0070);
+}
+
+.h3 {
+  display: inline-block;
+  font-weight: var(--bold-font-weight, 700);
+  font-size: var(--h3-font-size, 18px);
+  line-height: var(--h3-line-height, 1.3);
+}
+
+.title-decor {
+  align-self: center;
+  color: var(--h4-color, #000028);
+  font-weight: bold;
+  background-color: var(--accent-color, #FF0070);
+}
+
+.h4 {
+  font-size: var(--h3-font-size, 18px);
+  line-height: var(--h4-line-height, 1.3);
+}
+
+.section__title {
+  color: var(--h3-color, #FF0070);
+}
+
+.header__theme-menu {
+  grid-row: 1;
+  justify-self: end;
+  align-self: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header__theme-menu-button {
+  border: 1px solid transparent;
+  padding: 1.5px 13px 4.5px 13px;
+  color: var(--button-color, #FF0070);
+  font-size: var(--main-text-size, 18px);
+  line-height: var(--button-line-height, 1);
+  text-align: center;
+  text-transform: lowercase;
+  background: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--button-color, #FF0070);
+  pointer-events: none;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--button-hover-border, rgba(255, 0, 112, 0.4));
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--accent-color, rgba(255, 0, 112, 1));
+  outline: none;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.article-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  block-size: min-content;
+
+}
+
+.subheader {
+  align-self: start;
+  inline-size: 100%;
+}
+
+.card__title {
+  align-self: center;
+  inline-size: 100%;
+}
+
+
+
+.footer {
+  position: relative;
+  display: flex;
+  justify-content: center;;
+  align-items: center;
+  
+  padding: 0;
+  block-size: 100vh;
+  min-block-size: 668px; 
+}
+
+
+.text {
+  font-weight: inherit;
+  line-height: var(--main-text-line-height, 1.3);
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 2px 1px 0 var(--accent-color, #FF0070);
+}
+
+.link:focus-visible {
+  outline: 1.5px solid var(--main-text-color, #f1b2ce); 
+  outline-offset: 2px;       
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.gallery {
+  display: grid;
+  grid-auto-rows: min-content;
+  gap: 10px;
+  box-sizing: border-box; 
+}
+
+.gallery__item {
+  /* inline-size: 100%; */
+  display: block;
+  object-fit: contain;
+  /* inline-size: 100%;*/
+  max-inline-size: 100%;
+  block-size: min-content;
+  
+}
+    
+.gallery__item img {
+  display: block;
+  object-fit: contain;
+  inline-size: 100%;
+  block-size: auto;
+}
+
+
+@media (min-width: 768px) {
+  :root {
+    --padding: 20px;
+    --main-text-size: 18px;
+    
+  }
+
+  .page {
+    gap: 60px;
+  }
+
+  .header {
+    min-block-size: 1024px;
+  }
+
+  .header__title {
+    margin-inline-start: -20px;
+  } 
+
+  .header__decoration {
+  position: absolute;
+  top: 20px;
+  right: 29px;
+  }
+
+  .accent-text {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+ 
+
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+    border-inline-start: none;
+    border-block-end: none;
+  }
+
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+    border-inline-end: none;
+    border-block-start: none;
+  }
+
+  .header__description {
+    display: block;
+    grid-row: 3;
+    justify-self: end;
+    align-self: center;
+    block-size: min-content;
+    inline-size: calc((100vw - var(--padding, 20px) * 2 )/ 2);
+  }
+
+  .content {
+    gap: 80px;
+    padding: 0 var(--padding, 20px);
+  }
+
+  .section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-auto-rows: min-content;
+    gap: 20px;
+  }
+
+  .grid-section .section__title {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .article-list-horizontal {
+    grid-column: span 2;
+    grid-row: 2;
+  }
+
+  .card .title-decor {
+    align-self: start;
+    inline-size: 100%;
+  }
+  
+  .section-pictures {
+    display: block;
+  }
+
+  .section-pictures .card {
+    display: flex;
+    gap: 20px;
+    inline-size: 100%;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: dense;
+    gap: 20px;
+    
+  }
+
+  .gallery__item {
+    display: flex;
+  
+    block-size: 100%;
+    inline-size: 100%;
+  }
+
+  .gallery__item img {
+    display: block;
+    object-fit: cover;
+    inline-size: 100%;
+    block-size: auto;
+  }
+
+  .image-sunset {
+    grid-column: 1 / 3;
+    grid-row: span 1;
+  }
+
+  .image-ice-cream {
+    grid-column: 3;
+    grid-row: 1 / 3;
+  }
+
+  .image-tape {
+    grid-column: 1;
+    grid-row: 2 / 4;
+  }
+
+  .image-books {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .image-street {
+    grid-column: 2 / 4;
+    grid-row: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --padding: 20px;
+    --main-text-size: 18px;
+  }
+
+  .header {
+    min-block-size: 768px;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+}  
+  .header__theme-menu-list {
+    flex-direction: row;  
+  }
+
+
+.grid-section {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.article-list {
+  grid-column: 2 / span 2;
+}
+
+.article-list-horizontal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column: 1 / span 3;
+  gap: 20px;
+}
+}
+
+
+
+
