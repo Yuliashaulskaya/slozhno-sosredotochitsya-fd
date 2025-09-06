@@ -14,10 +14,11 @@
   --accent-color: rgb(255, 0, 112);
   --button-color: rgba(255, 0, 112, 1);
   --button-hover-border: rgba(255, 0, 112, 0.4);
-  --h1-color: #DB00FF;
-  --h3-color: rgb(255, 0, 112); 
-  --h4-color: rgb(0, 0, 40); 
+  --main-heading-color: #DB00FF;
+  --section-heading-color: rgb(255, 0, 112); 
+  --card-heading-color: rgb(0, 0, 40); 
   --decoration-color: rgba(255, 0, 112, 1);
+  --background-color: #000028;
 }
 
 .theme-dark .header__decoration {

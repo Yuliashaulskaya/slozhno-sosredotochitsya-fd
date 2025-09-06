@@ -15,11 +15,11 @@
   --accent-color: rgba(255, 141, 203, 1);
   --button-color: rgba(53, 52, 48, 1);
   --button-hover-border: rgba(50, 49, 45, 0.4);
-  --h1-color: rgba(255, 194, 230, 1);
-  --h3-color: rgba(53, 52, 48, 1);
+  --main-heading-color: rgba(255, 194, 230, 1);
+  --section-heading-color: rgba(53, 52, 48, 1);
+  --card-heading-color: rgba(53, 52, 48, 1);
   --decoration-color: rgba(53, 52, 48, 1);
-
-
+  --background-color: #fff1f7;
 }
 
 .theme-light .header__decoration {
@@ -33,9 +33,11 @@
     --accent-color: rgba(255, 141, 203, 1);
     --button-color: rgba(53, 52, 48, 1);
     --button-hover-border: rgba(50, 49, 45, 0.4);
-    --h1-color: rgba(255, 194, 230, 1);
-    --h3-color: rgba(53, 52, 48, 1);
+    --main-heading-color: rgba(255, 194, 230, 1);
+    --section-heading-color: rgba(53, 52, 48, 1);
+    --card-heading-color: rgba(53, 52, 48, 1);
     --decoration-color: rgba(53, 52, 48, 1);
+    --background-color: #fff1f7;
     /* Дублируем только те же переменные, что и выше */
   }
   .header__decoration {
