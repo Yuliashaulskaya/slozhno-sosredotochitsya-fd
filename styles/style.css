@@ -238,7 +238,7 @@
 }
 
 .link:hover {
-  border-bottom: 1px solid var(currentColor, #F1B2CE);
+  border-bottom: 1px solid var(--main-text-color, #F1B2CE);
 }
 
 .gallery {
